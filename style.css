@@ -1,6 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap'); 
+
+:root{
+    --main-color:#d3ad7f;
+    --black: #13131a;
+    --bg:#010103;
+    --border:.1rem solid rgba(255,255,255,.3);
+}
+
+
 
 *{
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,21 +18,13 @@
     border: none;
     text-decoration: none;
     text-transform: capitalize;
-    transition: .4s linear;
-    font-family: 'Roboto', sans-serif;
-} 
-
-:root{
-    --main-color: #FFB300;
-    --black:#13131a;
-    --bg: #010103;
-    --border: .1rem solid rgba(255,255,255,.3);
-}  
+    transition: .2s linear;
+}
 
 html{
-    font-size: 62,5%;
+    font-size: 62.5%;
     overflow-x: hidden;
-    scroll-padding-top:9rem ;
+    scroll-padding-top: 9rem;
     scroll-behavior: smooth;
 }
 
@@ -30,34 +32,35 @@ html::-webkit-scrollbar{
     width: .8rem;
 }
 
-html::-webkit-scrollbar-thumb{
-    background-color: #fff;
-    border-radius: 5rem;
+html::-webkit-scrollbar-track{
+    background: transparent;
 }
 
-html::-webkit-scrollbar-track{
-    background:transparent;
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: .5rem;
 }
 
 body{
     background: var(--bg);
 }
 
-.btn {
-    margin-top: .75rem;
-    display: inline-block;
-    padding: .4rem 2rem;
-    font-size: .9rem;
-    color: #fff;
-    background: #13131a;
-    cursor: pointer;
-    border-radius: .5rem;
-    
-
+section{
+    padding: 2rem 7%;
 }
 
- .btn:hover{
-    color: var(--main-color);
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+.btn:hover{
+    letter-spacing: .05rem;
 }
 
 .header{
@@ -65,33 +68,37 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 5%;
+    padding: 1.5rem 7%;
     border-bottom: var(--border);
     position: fixed;
-    top:0;left:0;right:0;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
 }
 
 .header .logo img{
     height: 6rem;
-}   
+}
 
 .header .navbar a{
     margin: 0 1rem;
-    font-size: 1rem;
+    font-size: 1.6rem;
     color: #fff;
 }
+
 
 .header .navbar a:hover{
     color: var(--main-color);
-    border-bottom: .5rem solid var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
 }
 
 .header .icons div{
-    font-size: 1.5rem;
     color: #fff;
     cursor: pointer;
-    margin-left: 1.5rem;
+    font-size: 2rem;
+    margin-left: 2rem;
 }
 
 .header .icons div:hover{
@@ -104,7 +111,8 @@ body{
 
 .header .search-form{
     position: absolute;
-    top: 115%; right: 7%;
+    top: 115%;
+    right: 7%;
     background: #fff;
     width: 50rem;
     height: 5rem;
@@ -114,19 +122,24 @@ body{
     transform-origin: top;
 }
 
+.header .search-form.active{
+    transform: scaleY(1);
+}
+
 .header .search-form input{
     width: 100%;
     height: 100%;
-    padding: 1rem;
-    color: var(--black);
+    padding: 0 1rem;
     font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem;
     text-transform: none;
 }
 
 .header .search-form label{
+    font-size: 2.2rem;
     color: var(--black);
     margin-right: 1.5rem;
-    font-size: 2.2rem;
     cursor: pointer;
 }
 
@@ -136,16 +149,20 @@ body{
 
 .header .cart-item-container{
     position: absolute;
-    top: 100%; right: 0;
+    top: 100%; right: -100%;
     height: calc(100vh - 9.5rem);
     width: 21.75rem;
-    background: #E8ECF0;
+    background: #fff;
     padding: 0 1.5rem;
+}
+
+.header .cart-item-container.active{
+    right: 0;
 }
 
 .header .cart-item-container .cart-item{
     position: relative;
-    margin: 1rem 0;
+    margin: 2rem 0;
     display: flex;
     align-items: center;
     gap: 1.5rem;    
@@ -164,10 +181,10 @@ body{
 }
 
 .header .cart-item-container .cart-item img{
-    height: 7rem; /* Mevcut yüksekliğiniz */
-    width: 7rem; /* Kare hale getirmek için genişlik ekliyoruz */
-    border-radius: 50%; /* Yuvarlak yapmak için */
-    object-fit: cover; /* Görüntünün taşan kısmını kesmek için */
+    height: 7rem; 
+    width: 7rem; 
+    border-radius: 50%; 
+    object-fit: cover; 
 }
 
 .header .cart-item-container .cart-item .content h3{
@@ -182,70 +199,63 @@ body{
    
 }
 
-.header .cart-item-container .btn{
-    display: flex;
-    flex-direction: column-reverse; /* Elemanları dikey hizalamak için */
-    align-items: center; /* Yatayda ortalamak için */
-    padding: .5rem; /* İsteğe bağlı iç boşluk */
-    width: 100%;
+.header .cart-item-container .btn {
+    width: 50%; 
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
+@media (max-width:991px){
+    
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 1.5rem 2rem;
+    }
+}
 
+@media (max-width:768px){
+    
+    #menu-btn{
+        display: inline-block;
+    }
 
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: #fff;
+        width: 21.75rem;
+        height: calc(100vh - 9.5rem);
+    }
 
+    .header .navbar.active{
+        right: 0;
+    }
+    
 
+    .header .search-form{
+        width: 90%;
+        right: 2rem;
+    }
+    
 
+    .header .navbar a{
+        color: var(--black);
+        display: block;
+        padding: .5rem;
+        margin: 1.5rem;
+        font-size: 1.6rem;
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width:450px){
+    
+    html{
+        font-size: 50%;
+    }
+}  
