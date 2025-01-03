@@ -292,7 +292,7 @@ section{
 }
 
 .menu .box-container .box{
-    background: var(--border);
+    border: var(--border);
     padding: 5rem;
     text-align: center;
 }
@@ -326,11 +326,69 @@ section{
     background: #4838386c;
 }
 
+.products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
 
+.products .box-container .box{
+    border: var(--border);
+    padding: 2rem;
+    text-align: center;
+}
 
+.products .box-container .box .icons a{
+    height: 3.5rem;
+    width: 3.5rem;
+    line-height: 3.5rem;
+    font-size: 1.5rem;
+    border: var(--border);
+    color: #d3ad7f;
+    margin: .3rem;
+}
 
+.products .box-container .box .icons a:hover{
+    color: #f02020e5;
+}
 
+.products .box-container .box .image{
+    padding: 2.5rem 0;
+}
 
+.products .box-container .box .image img{
+    width: 20rem;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+
+}
+
+.products .box-container .box .content h3{
+    color: #d3ad7f;
+    font-size: 2rem;
+}
+
+.products .box-container .box .content .stars{
+    padding: 1.5rem;
+}
+
+.products .box-container .box .content .stars i{
+    color: #d3ad7f;
+    font-size: 1.7rem;
+}
+
+.products .box-container .box .content .price{
+    color: #ccc;
+    padding: 2.5rem;
+    font-size: 2rem;
+}
+
+.products .box-container .box .content .price span{
+    font-weight: lighter;
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
 
 
 
