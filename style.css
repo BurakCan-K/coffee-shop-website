@@ -433,6 +433,55 @@ height: 4rem;
 border-radius: 100%;
 }
 
+.contact .row{
+    display: flex;
+    background: var(--black);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact .row .map{
+    flex: 1 1 45rem;
+    object-fit: cover;
+    width: 100%;
+}
+
+.contact .row form{
+    flex: 1 1 45rem;
+    padding: 5rem  2rem;
+    text-align: center;
+}
+
+.contact .row form h3{
+    font-size: 3.5rem;
+    color: #d3ad7f;
+    text-transform: uppercase;
+}
+
+.contact .row form .input-box{
+    display: flex   ;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background:var(--bg);
+    border: var(--border);
+}
+
+.contact .row form .input-box span{
+    padding-left: 1.2rem;
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.contact .row form .input-box input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.6rem;
+    background: var(--bg);
+    color: #d3ad7f;
+    text-transform: none;
+}
+
 
 
 
